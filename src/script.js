@@ -113,6 +113,8 @@ scene.add(earth);
 // Orbit controls
 const controls = new OrbitControls(camera, canvas);
 controls.enableDamping = true;
+controls.minDistance = 3;
+controls.maxDistance = 10;
 
 // Animation
 const clock = new THREE.Clock();
