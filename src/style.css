@@ -1,0 +1,21 @@
+/* Remove margins and padding on all elements */
+* 
+{  
+    margin: 0;  
+    padding: 0; 
+}
+
+/* Remove canvas outline */
+.webgl
+{
+    position: fixed;
+    top: 0;
+    left: 0;
+    outline: none;
+}
+
+/* Remove scrolling */
+html, body
+{
+    overflow: hidden;
+}
