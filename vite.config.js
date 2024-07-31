@@ -1,4 +1,5 @@
-export default {
+export default 
+{
     root: 'src/',
     publicDir: '../static/',
     base: './',

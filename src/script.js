@@ -10,18 +10,18 @@ const scene = new THREE.Scene();
 
 // Camera
 const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 0.1, 1000);
-camera.position.set(0, 0, 5);
+camera.position.set(0, 0, 5).normalize();
 camera.lookAt(0, 0, 0);
 scene.add(camera);
 
-// Light
-const light = new THREE.DirectionalLight(0xffffff, 1);
-light.position.set(0, 0, 5);
-light.castShadow = true;
-scene.add(light);
+// Lights
+const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+directionalLight.position.set(5, 5, 5);
+directionalLight.castShadow = true;
+scene.add(directionalLight);
 
 // Ambient light
-const ambientLight = new THREE.AmbientLight(0xffffff, 0.5);
+const ambientLight = new THREE.AmbientLight(0x404040, 0.5);
 scene.add(ambientLight);
 
 // Renderer
@@ -67,48 +67,34 @@ const stats = new Stats();
 stats.showPanel(0);
 document.body.appendChild(stats.dom);
 
-// Objects
-function createPlanet({ radius, widthSegments, heightSegments, positionX, textures = {}, emissiveColor = null }) 
-{
-    const geometry = new THREE.SphereGeometry(radius, widthSegments, heightSegments);
-    const materialConfig = { map: new THREE.TextureLoader().load(textures.color) };
-
-    if (textures.normal) {
-        materialConfig.normalMap = new THREE.TextureLoader().load(textures.normal);
-    }
-    if (textures.bump) {
-        materialConfig.bumpMap = new THREE.TextureLoader().load(textures.bump);
-    }
-    if (emissiveColor) {
-        materialConfig.emissive = new THREE.Color(emissiveColor);
-        materialConfig.emissiveIntensity = 0.5; // Adjust as needed
-    }
-
-    const material = new THREE.MeshStandardMaterial(materialConfig);
-    const mesh = new THREE.Mesh(geometry, material);
-    mesh.position.x = positionX;
-
-    // Set shadow properties
-    mesh.receiveShadow = true;
-    mesh.castShadow = true;
-
-    return mesh;
-}
-
 // Earth
-const earth = createPlanet({
-    radius: 1,
-    widthSegments: 32,
-    heightSegments: 32,
-    positionX: 0,
-    textures: {
-        color: 'textures/2k_earth_daymap.jpg',
-        night: 'textures/2k_earth_nightmap.jpg',
-        normal: 'textures/2k_earth_normal_map.tif',
-        specular: 'textures/2k_earth_specular_map.tif'
-    }
-});
+const earthGeometry = new THREE.SphereGeometry(1, 64, 64);
+const earthMaterialConfig = {
+    map: new THREE.TextureLoader().load('textures/2k_earth_daymap.jpg'),
+    bumpMap: new THREE.TextureLoader().load('textures/8081_earthbump4k.jpg'),
+    bumpScale: 3.0,
+    metalnessMap: new THREE.TextureLoader().load('textures/8081_earthspec4k.jpg'),
+    metalness: 0.1,
+    roughness: 0.5,
+};
+const earthMaterial = new THREE.MeshStandardMaterial(earthMaterialConfig);
+const earth = new THREE.Mesh(earthGeometry, earthMaterial);
+earth.position.x = 0;
+earth.rotation.x = THREE.MathUtils.degToRad(23.5);
+earth.receiveShadow = true;
+earth.castShadow = true;
 scene.add(earth);
+
+// Clouds
+const cloudGeometry = new THREE.SphereGeometry(1.02, 32, 32);
+const cloudMaterial = new THREE.MeshStandardMaterial({
+    map: new THREE.TextureLoader().load('textures/2k_earth_clouds.jpg'),
+    transparent: true,
+    opacity: 0.2,
+    depthWrite: false,
+});
+const cloudMesh = new THREE.Mesh(cloudGeometry, cloudMaterial);
+scene.add(cloudMesh);
 
 // Orbit controls
 const controls = new OrbitControls(camera, canvas);
@@ -122,8 +108,15 @@ const tick = () =>
 {
     const elapsedTime = clock.getElapsedTime();
 
-    // Update objects
+    // Rotate the earth
     earth.rotation.y = elapsedTime * 0.1;
+
+    // Rotate the clouds
+    cloudMesh.rotation.y = elapsedTime * 0.11;
+    cloudMesh.rotation.x = elapsedTime * -0.001;
+
+    // add axial tilt
+    earth.rotation.x = THREE.MathUtils.degToRad(23.5);
 
     // Update controls
     controls.update();
