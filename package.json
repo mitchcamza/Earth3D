@@ -1,0 +1,23 @@
+{
+  "dependencies": {
+    "esbuild": "^0.23.0",
+    "node": "^20.16.0",
+    "stats.js": "^0.17.0",
+    "three": "^0.167.0"
+  },
+  "devDependencies": {
+    "vite": "^5.3.5"
+  },
+  "name": "earth3d",
+  "private": true,
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
