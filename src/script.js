@@ -102,6 +102,18 @@ controls.enableDamping = true;
 controls.minDistance = 3;
 controls.maxDistance = 10;
 
+// Credits
+const credits = document.createElement('a');
+credits.href = 'https://github.com/mitchcamza/Earth3D';
+credits.style.position = 'absolute';
+credits.style.bottom = '10px';
+credits.style.left = '10px';
+credits.style.color = 'white';
+credits.style.fontFamily = 'Arial';
+credits.style.fontSize = '12px';
+credits.innerHTML = 'Credits';
+document.body.appendChild(credits);
+
 // Animation
 const clock = new THREE.Clock();
 const tick = () =>
@@ -113,7 +125,7 @@ const tick = () =>
 
     // Rotate the clouds
     cloudMesh.rotation.y = elapsedTime * 0.11;
-    cloudMesh.rotation.x = elapsedTime * -0.001;
+    cloudMesh.rotation.x = elapsedTime * 0.001;
 
     // add axial tilt
     earth.rotation.x = THREE.MathUtils.degToRad(23.5);
