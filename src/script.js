@@ -15,7 +15,7 @@ camera.lookAt(0, 0, 0);
 scene.add(camera);
 
 // Lights
-const directionalLight = new THREE.DirectionalLight(0xffffff, 3);
+const directionalLight = new THREE.DirectionalLight(0xffffff, 5);
 directionalLight.position.set(5, 5, 5);
 directionalLight.castShadow = true;
 scene.add(directionalLight);
@@ -75,8 +75,11 @@ const earthMaterialConfig = {
     bumpScale: 3.0,
     metalnessMap: new THREE.TextureLoader().load('textures/8081_earthspec4k.jpg'),
     metalness: 0.1,
-    roughness: 0.5,
+    roughness: 0.6,
 };
+earthMaterialConfig.map.colorSpace = THREE.SRGBColorSpace;
+const maxAnisotropy = renderer.capabilities.getMaxAnisotropy();
+earthMaterialConfig.map.anisotropy = maxAnisotropy;
 const earthMaterial = new THREE.MeshStandardMaterial(earthMaterialConfig);
 const earth = new THREE.Mesh(earthGeometry, earthMaterial);
 earth.position.x = 0;
