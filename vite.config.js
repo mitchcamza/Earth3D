@@ -1,3 +1,6 @@
+import restart from 'vite-plugin-restart'
+import glsl from 'vite-plugin-glsl'
+
 export default 
 {
     root: 'src/',
@@ -14,4 +17,9 @@ export default
         emptyOutDir: true, // Empty the folder first
         sourcemap: true // Add sourcemap
     },
+    plugins:
+    [
+        restart({ restart: ['../src/**/*', '../static/**/*', '../dist/**/*'] }), // Restart the server when files change
+        glsl() // Add GLSL support
+    ]
 }
