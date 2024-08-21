@@ -19,7 +19,7 @@ export default
     },
     plugins:
     [
-        restart({ restart: ['../src/**/*', '../static/**/*', '../dist/**/*'] }), // Restart the server when files change
+        restart({ restart: ['../static/**'] }), // Restart the server when files change
         glsl() // Add GLSL support
     ]
 }
