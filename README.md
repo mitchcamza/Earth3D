@@ -26,6 +26,8 @@ By [Solar System Scope](http://solarsystemscope.com/textures)
 By James Hastings-Trew
 [Planet Pixel Emporium](https://planetpixelemporium.com/planets.html)
 
+- Shaders: Bruno Simon and his [Three.js Journey](https://threejs-journey.com) course.
+
 ## License
 This project is licensed under the MIT License. See the [LICENSE](https://github.com/mitchcamza/Earth3D?tab=MIT-1-ov-file) file for more details.
 Acknowledgments
