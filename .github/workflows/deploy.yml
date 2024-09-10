@@ -1,12 +1,9 @@
-name: Deploy to GitHub Pages
+name: Deploy Earth3D to GitHub Pages
 
 on:
-  push:
+  pull_request:
     branches:
       - main  
-      - dev
-      - workflow
-      - feature/*
 
 jobs:
   build:
@@ -14,21 +11,22 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v2
+        uses: actions/checkout@v3
 
       - name: Set up Node.js
-        uses: actions/setup-node@v2
+        uses: actions/setup-node@v3
         with:
-          node-version: '20'
+          node-version: '20' 
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci # Clean install to ensure deterministic builds
 
       - name: Build project
         run: npm run build
 
       - name: Deploy to GitHub Pages
-        uses: peaceiris/actions-gh-pages@v3
+        uses: peaceiris/actions-gh-pages@v4
         with:
-          github_token: ${{ secrets.Deploy }}
-          publish_dir: ./dist  # Set this to your build directory
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./dist  # The directory where the build files are generated
+
