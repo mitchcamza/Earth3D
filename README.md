@@ -1,5 +1,7 @@
 # 3D Earth Project
 
+[![Deploy Earth3D to GitHub Pages](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml/badge.svg)](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml)
+
 ## Overview
 This project showcases a 3D model of Earth, utilizing various textures to enhance realism. The model is designed for educational and demonstration purposes, highlighting the beauty and complexity of our planet.
 
