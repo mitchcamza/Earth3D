@@ -5,7 +5,7 @@ export default
 {
     root: 'src/',
     publicDir: '../static/',
-    base: './Earth3d',
+    base: './Earth3D',
     server:
     {
         host: true, // Open to local network and display URL
