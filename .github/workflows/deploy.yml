@@ -4,6 +4,8 @@ on:
   pull_request:
     branches:
       - main  
+      
+  workflow_dispatch: # Add this to enable manual trigger
 
 permissions:
   contents: write  # Grant write access to the repository contents
