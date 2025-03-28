@@ -3,7 +3,10 @@
 [![Deploy Earth3D to GitHub Pages](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml/badge.svg)](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml)
 
 ## Overview
-This project showcases a 3D model of Earth, utilizing various textures to enhance realism. The model is designed for educational and demonstration purposes, highlighting the beauty and complexity of our planet.
+This project showcases a 3D model of Earth, utilizing high quality textures, as well as shaders that create realistic day/night cycles to enhance realism.
+
+<img width="800" alt="image" src="https://github.com/user-attachments/assets/2cfb1e54-63bf-4f4c-b38b-cb214a2264dd" />
+
 
 ## Features
 - High-resolution textures for Earth
@@ -11,7 +14,9 @@ This project showcases a 3D model of Earth, utilizing various textures to enhanc
 - Cloud overlay for added realism
 
 ## Getting Started
-To run this project:
+### Option 1: [View the live project on Vercel](https://earth3d-seven.vercel.app)
+
+### Option 2: If you would prefer to run this project locally:
 1. Clone the repository ```bash git clone https://github.com/yourusername/3d-earth-project.git```
 2. Install the dependencies: ```bash npm install```
 3. Run the project ```bash npm run dev```
