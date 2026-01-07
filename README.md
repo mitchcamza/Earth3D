@@ -17,9 +17,18 @@ This project showcases a 3D model of Earth, utilizing high quality textures, as 
 ### Option 1: [View the live project on Vercel](https://earth3d-seven.vercel.app)
 
 ### Option 2: If you would prefer to run this project locally:
-1. Clone the repository ```bash git clone https://github.com/yourusername/3d-earth-project.git```
-2. Install the dependencies: ```bash npm install```
-3. Run the project ```bash npm run dev```
+1. Clone the repository
+```bash
+git clone https://github.com/yourusername/3d-earth-project.git
+```
+3. Install the dependencies:
+```bash
+npm install
+```
+5. Run the project
+```bash
+npm run dev
+```
 
 ## Attributions
 This project uses the following textures, which are licensed under the Creative Commons Attribution 4.0 International License:
