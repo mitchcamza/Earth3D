@@ -19,7 +19,7 @@ This project showcases a 3D model of Earth, utilizing high quality textures, as 
 ### Option 2: If you would prefer to run this project locally:
 1. Clone the repository
 ```bash
-git clone https://github.com/yourusername/3d-earth-project.git
+git clone git@github.com:mitchcamza/Earth3D.git
 ```
 3. Install the dependencies:
 ```bash
