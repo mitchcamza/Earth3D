@@ -110,18 +110,6 @@ Through this project, I gained hands-on experience with:
 - **Build Tools**: Configuring modern build tools (Vite) for optimal development workflow
 - **Version Control**: Managing a project with Git and deploying to production
 
-## 🚧 Future Enhancements
-
-Potential features and improvements I'd like to add:
-
-- [ ] Add stars/space background for more immersive experience
-- [ ] Implement city lights on the night side of Earth
-- [ ] Add moon with orbital mechanics
-- [ ] Include interactive UI controls for rotation speed and lighting
-- [ ] Add more planets to create a mini solar system
-- [ ] Implement post-processing effects (bloom, color grading)
-- [ ] Add loading screen with progress indicator
-- [ ] Optimize texture loading with progressive loading
 
 ## 📜 Attributions
 
