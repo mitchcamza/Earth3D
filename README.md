@@ -1,7 +1,5 @@
 # 3D Earth Project
 
-[![Deploy Earth3D to GitHub Pages](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml/badge.svg)](https://github.com/mitchcamza/Earth3D/actions/workflows/deploy.yml)
-
 ## Overview
 This project showcases a 3D model of Earth, utilizing high quality textures, as well as shaders that create realistic day/night cycles to enhance realism.
 
