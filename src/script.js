@@ -1,10 +1,14 @@
 import * as THREE from 'three';
 import { OrbitControls } from 'three/examples/jsm/Addons.js';
 import Stats from 'stats.js';
+import { inject } from '@vercel/analytics';
 import earthVertexShader from './shaders/earth/earth.vert';
 import earthFragmentShader from './shaders/earth/earth.frag';
 import atmosphereVertexShader from './shaders/atmosphere/atmosphere.vert';
 import atmosphereFragmentShader from './shaders/atmosphere/atmosphere.frag';
+
+// Initialize Vercel Web Analytics
+inject();
 
 // Canvas
 const canvas = document.querySelector('canvas.webgl');
