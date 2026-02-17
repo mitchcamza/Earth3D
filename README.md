@@ -7,7 +7,7 @@
 
 An interactive 3D visualization of Earth built with Three.js, featuring custom GLSL shaders for realistic day/night cycles, atmospheric effects, and high-resolution textures. This project demonstrates modern WebGL development practices and shader programming techniques.
 
-<img width="800" alt="Earth3D Demo" src="https://github.com/user-attachments/assets/2cfb1e54-63bf-4f4c-b38b-cb214a2264dd" />
+![earth-3d-demo-720p](https://github.com/user-attachments/assets/5f26ab5e-e73d-4224-b8e9-93c845d317ed)
 
 ## 🚀 Live Demo
 **[View Live Project →](https://earth3d-seven.vercel.app)**
